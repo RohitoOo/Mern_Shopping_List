@@ -35,9 +35,9 @@ const { items } = this.state
       </Button>
 
       <ListGroup>
-
+        <TransitionGroup className="shopping-list"> 
         {items.map( ({id, name}) => (
-          <CSSTransition key={id} timeout={500} classNames='fade'>
+          <CSSTransition key={id} timeout={500} classNames="fade">
             <ListGroupItem>
               <Button
                 className="remove-btn"
@@ -60,7 +60,7 @@ const { items } = this.state
 
         )}
 
-
+        </TransitionGroup>
       </ListGroup>
     </Container>
   )
