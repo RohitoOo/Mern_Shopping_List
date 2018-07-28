@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AppNavbar from './components/AppNavbar'
-
+import ShoppingList from './components/ShoppingList'
 
 class App extends Component {
   render() {
@@ -12,6 +12,7 @@ class App extends Component {
           <h1 className="App-title">Rohito Bhambhani </h1>
         </header>
         <AppNavbar></AppNavbar>
+        <ShoppingList></ShoppingList>
       </div>
     );
   }
