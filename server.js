@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
 const app = express();
+const items = require('./routes/api/items')
 
 // Body Parser Middleware
 app.use(bodyParser.json());
@@ -21,9 +21,20 @@ mongoose
     } )
   .catch(err => console.log(err));
 
+// Use Routes From Routes Folder
 
-  const port = process.env.PORT || 5000
+app.use('/api/items' , items)
 
-  app.listen(port , () =>
-    console.log(`We are live on port ${port} `)
-  )
+
+
+//Testing
+app.get('/' , () => {
+console.log('Server Works')
+})
+
+
+
+const port = process.env.PORT || 5000
+app.listen(port , () =>
+  console.log(`We are live on port ${port} `)
+)
