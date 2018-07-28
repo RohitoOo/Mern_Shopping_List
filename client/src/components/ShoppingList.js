@@ -36,7 +36,19 @@ const { items } = this.state
 
       <ListGroup>
 
-        {items.map( ({name}) => (<ListGroupItem>{name}</ListGroupItem>))}
+        {items.map( ({id, name}) => (
+          <CSSTransition key={id} timeout={5000} classNames='fade'>
+            <ListGroupItem>
+              <Button>&times;</Button>  
+              {name}
+            </ListGroupItem>
+          </CSSTransition>
+
+
+        )
+
+
+        )}
 
 
       </ListGroup>
