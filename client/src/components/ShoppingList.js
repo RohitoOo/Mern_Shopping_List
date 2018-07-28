@@ -37,10 +37,20 @@ const { items } = this.state
       <ListGroup>
 
         {items.map( ({id, name}) => (
-          <CSSTransition key={id} timeout={5000} classNames='fade'>
+          <CSSTransition key={id} timeout={500} classNames='fade'>
             <ListGroupItem>
-              <Button>&times;</Button>  
-              {name}
+              <Button
+                className="remove-btn"
+                color="danger"
+                size="sm"
+                onClick={ ()=> {
+                  this.setState( state => ({
+                    items: state.items.filter(item => item.id !== id)
+                  }) )
+                }}
+                > &times;
+              </Button>
+                 {name}
             </ListGroupItem>
           </CSSTransition>
 
