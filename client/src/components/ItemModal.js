@@ -10,6 +10,8 @@ Label,
 Input
 } from 'reactstrap';
 
+import uuid from 'uuid'
+
 import { connect } from 'react-redux'
 import { addItem } from '../actions/itemActions'
 
@@ -30,6 +32,22 @@ class ItemModal extends Component {
       [e.target.name] : e.target.value
     })
   }
+
+  onSubmit = (e) => {
+    e.preventDefault()
+
+    const newItem = {
+      id : uuid(),
+      name : this.state.name
+    };
+
+    // Add item via addItem action
+    this.props.addItem(newItem);
+
+    // Close Modal
+    this.toggle();
+
+  }
   render(){
     return(
       <div>
@@ -48,7 +66,7 @@ class ItemModal extends Component {
                 >Add To Shopping List
               </ModalHeader>
               <ModalBody>
-                <Form>
+                <Form onSubmit={this.onSubmit}>
                   <FormGroup>
 
                     <Input
@@ -74,4 +92,9 @@ class ItemModal extends Component {
 
 }
 
-export default connect()(ItemModal);
+
+const mapStateToProps = (state) => ({
+  item : state.item
+})
+
+export default connect(mapStateToProps, {addItem})(ItemModal);
