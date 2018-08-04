@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router()
+
+
+// Bring in the Item Model
 const Item = require('../../models/Item')
 
 
@@ -8,13 +11,10 @@ const Item = require('../../models/Item')
 // @access Public
 
 router.get('/' , (req,res) => {
-
 Item
 .find({})
 .sort({date : -1}) // descending sort
-.then(items => { res.json (items)})
-
-
+.then(items => { res.json (items) })
 })
 
 
