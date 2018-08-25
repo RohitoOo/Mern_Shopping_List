@@ -6,6 +6,10 @@ const router = express.Router()
 const Item = require('../../models/Item')
 
 
+
+
+
+
 // @route  GET api/items
 // @desc   Get all Items from Database
 // @access Public
@@ -16,7 +20,6 @@ Item
 .sort({date : -1}) // descending sort
 .then(items => { res.json (items) })
 })
-
 
 
 // @route  POST api/items
@@ -34,6 +37,7 @@ newItem.save().then(item => res.json(item))
 })
 
 
+
 // @route  Delete api/items/:id
 // @desc   Delete An Item from Database
 // @access Public
@@ -46,6 +50,8 @@ Item
 .catch( (err) => { res.status(404).json({success: false})} )
 
 })
+
+// Success And Reject (404) Actions for Remove Promise Responses.
 
 
 

@@ -13,7 +13,6 @@ const db = require('./config/keys').mongoURI
 // Connect to MongoDB
 
 
-
 mongoose
   .connect(db,{ useNewUrlParser: true })
   .then( () => {
@@ -25,14 +24,7 @@ mongoose
 
 app.use('/api/items' , items)
 
-
-
-//Testing
-app.get('/' , () => {
-console.log('Server Works')
-})
-
-
+// Heroku Deployment Setup
 
 const port = process.env.PORT || 5000
 app.listen(port , () =>

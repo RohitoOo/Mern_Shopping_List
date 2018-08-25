@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Container, ListGroup, ListGroupItem, Button} from 'reactstrap';
 import {CSSTransition, TransitionGroup} from 'react-transition-group' ;
-import {connect} from 'react-redux'
-import { getItems , deleteItem} from '../actions/itemActions'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
+// Get Items Action
+import { getItems , deleteItem} from '../actions/itemActions'
 
 class ShoppingList extends Component {
 
