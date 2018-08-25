@@ -6,12 +6,8 @@ const router = express.Router()
 const Item = require('../../models/Item')
 
 
-
-
-
-
 // @route  GET api/items
-// @desc   Get all Items from Database
+// @description   Get all Items from Database
 // @access Public
 
 router.get('/' , (req,res) => {
@@ -31,12 +27,10 @@ router.post('/' , (req,res) => {
 const newItem = new Item({
   name: req.body.name,
 })
-
+// Saves Item to Database and returns Same Item ( Then Grabbed by the front end )
 newItem.save().then(item => res.json(item))
 
 })
-
-
 
 // @route  Delete api/items/:id
 // @desc   Delete An Item from Database

@@ -1,4 +1,5 @@
 import React, {Component} from 'react' ;
+// https://reactstrap.github.io/
 import {
   Collapse,
   Navbar,
@@ -9,7 +10,6 @@ import {
   NavLink,
   Container
 }from 'reactstrap';
-
 
 class AppNavbar extends Component {
 
@@ -34,7 +34,7 @@ class AppNavbar extends Component {
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href="https://rohito.com">Rohito</NavLink>
+                    <NavLink href="https://rohito.com">Responsive Rohito</NavLink>
                   </NavItem>
                 </Nav>
               </Collapse>

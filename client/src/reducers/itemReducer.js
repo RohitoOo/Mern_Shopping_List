@@ -1,4 +1,3 @@
-import uuid from 'uuid' ;
 import {GET_ITEMS, ADD_ITEM, DELETE_ITEM , ITEMS_LOADING} from '../actions/types'
 
 
@@ -12,9 +11,9 @@ export default function(state = initialState, action) {
     case GET_ITEMS:
       return {
         ...state,
-        items : action.payload,
+        items : [action.payload , 's'],
         loading: false
-        //Add Spinner Here While Loading
+        // Add Spinner Here While Loading
       };
     case DELETE_ITEM:
         return {

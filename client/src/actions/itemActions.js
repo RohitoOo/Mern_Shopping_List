@@ -1,7 +1,7 @@
 import {GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING} from './types'
 import axios from 'axios'
 
-// Requests to the Backend 
+// Requests to the Backend
 
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
@@ -14,6 +14,8 @@ axios
   }))
 
 }
+
+// Sending / Dispatching Payload to Reducers
 
 export const deleteItem = (id) => dispatch => {
 axios.delete(`api/items/${id}`)

@@ -6,9 +6,12 @@ ModalHeader,
 ModalBody,
 Form,
 FormGroup,
-Label,
 Input
 } from 'reactstrap';
+
+
+// Need State From Both Shopping List Component And Modal Component ( local state )
+// This is done via Redux State Management
 
 
 // Connection to Redux

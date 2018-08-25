@@ -9,7 +9,6 @@ import { getItems , deleteItem} from '../actions/itemActions'
 
 class ShoppingList extends Component {
 
-
   componentDidMount() {
     this.props.getItems();
   }
@@ -17,7 +16,6 @@ class ShoppingList extends Component {
 onDeleteClick = (id) => {
   this.props.deleteItem(id)
 }
-
 
 render(){
 
@@ -54,6 +52,4 @@ const mapStateToProps = (state) => ({
   item : state.item
 })
 
-export default connect(mapStateToProps,
-  {getItems , deleteItem})
-  (ShoppingList);
+export default connect(mapStateToProps,{getItems , deleteItem})(ShoppingList);
