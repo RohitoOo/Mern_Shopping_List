@@ -19,7 +19,7 @@ Item
 
 
 // @route  POST api/items
-// @desc   Create an Item / Post to Database
+// @description   Create an Item / Post to Database
 // @access Public
 
 router.post('/' , (req,res) => {
@@ -33,7 +33,7 @@ newItem.save().then(item => res.json(item))
 })
 
 // @route  Delete api/items/:id
-// @desc   Delete An Item from Database
+// @description   Delete An Item from Database
 // @access Public
 
 router.delete('/:id' , (req,res) => {

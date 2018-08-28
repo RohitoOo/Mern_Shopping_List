@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
     case GET_ITEMS:
       return {
         ...state,
-        items : [action.payload , 's'],
+        items : action.payload,
         loading: false
         // Add Spinner Here While Loading
       };
