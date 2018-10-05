@@ -21,7 +21,6 @@ render(){
 
 // Deconstructing items from this.state
 const { items } = this.props.item
-
   return(
 <Container>
 <ListGroup>
