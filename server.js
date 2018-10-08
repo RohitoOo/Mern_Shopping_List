@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 
 app.use('/api/items' , items)
 
-// app.use(express.static('client/build'));
+app.use(express.static('/root/Mern_Shopping_List/client/build'));
 
 // Database Config 
 
