@@ -2,7 +2,7 @@
 
 This is a full-stack MERN app disigned to create a personalized shopping-list.
 
-[Live Link](159.65.155.169)
+[Live Link](http://159.65.155.169)
 
 **Functionalities:** Adding & deleting shopping items.
 
