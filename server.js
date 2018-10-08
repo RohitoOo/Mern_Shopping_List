@@ -67,9 +67,9 @@ mongoose
 .then( () => console.log("MongoDB Connected"))
 .catch(err => console.log("Error :" + err));
 
-const port = process.env.PORT || 5000; 
+const port = process.env.PORT || 80; 
 
 app.listen(port , ()=> {
-  console.log("We are live on port", port)
+  console.log("We are live on port", 80)
 })
 
