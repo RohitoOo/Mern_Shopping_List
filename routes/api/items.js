@@ -11,11 +11,15 @@ const Item = require('../../models/Item')
 // @access Public
 
 router.get('/' , (req,res) => {
+
+  
 Item
 .find({})
+//Mongoose Sort By Date ( 1 ascending || -1 descending )
 .sort({date : -1}) // descending sort
 .then(items => { res.json (items) })
 })
+
 
 
 // @route  POST api/items
@@ -39,14 +43,13 @@ newItem.save().then(item => res.json(item))
 router.delete('/:id' , (req,res) => {
 
 Item
+// Mongoose method - findById()
 .findById(req.params.id)
-.then(item => item.remove().then( () => res.json({success : true} )))
-.catch( (err) => { res.status(404).json({success: false})} )
+.then(item => item.remove().then( () => res.json({success : true, ItemDeleted : item.name} )))
+.catch( (err) => { res.status(404).json({success: false, Id_Does_Not_Exist_In_Database: req.params.id})} )
 
 })
 
 // Success And Reject (404) Actions for Remove Promise Responses.
-
-
 
 module.exports = router;
