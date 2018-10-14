@@ -1,4 +1,4 @@
-# Shopping_List MERN Stack
+# Shopping_List MERN Stack [Web & Mobile App] 
 
 This is a full-stack MERN app disigned to create a personalized shopping-list.
 
