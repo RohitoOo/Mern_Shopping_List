@@ -1,3 +1,33 @@
+
+const express = require('express')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+const items = require('./routes/api/items')
+
+const app = express();
+
+// Body Parse Middleware
+app.use(bodyParser.json());
+
+app.use('/api/items' , items)
+
+app.use(express.static('client/build'));
+
+// Database Config 
+
+const db = require('./config/keys.js').mongoURI
+
+mongoose
+.connect(db , { useNewUrlParser: true })
+.then( () => console.log("MongoDB Connected"))
+.catch(err => console.log("Error :" + err));
+
+const port = process.env.PORT || 5000; 
+
+app.listen(port , ()=> {
+  console.log("We are live on port", 5000)
+})
+
 // const express = require('express');
 // const mongoose = require('mongoose');
 // const bodyParser = require('body-parser');
@@ -44,32 +74,4 @@
 // )
 
 
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const items = require('./routes/api/items')
-
-const app = express();
-
-// Body Parse Middleware
-app.use(bodyParser.json());
-
-app.use('/api/items' , items)
-
-app.use(express.static('client/build'));
-
-// Database Config 
-
-const db = require('./config/keys.js').mongoURI
-
-mongoose
-.connect(db , { useNewUrlParser: true })
-.then( () => console.log("MongoDB Connected"))
-.catch(err => console.log("Error :" + err));
-
-const port = process.env.PORT || 80; 
-
-app.listen(port , ()=> {
-  console.log("We are live on port", 80)
-})
 
