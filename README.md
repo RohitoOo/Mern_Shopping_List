@@ -1,6 +1,6 @@
 # Shopping_List MERN Stack [Web & Mobile App] 
 
-This is a full-stack MERN app disigned to create a personalized shopping-list.
+This is a full-stack MERN app designed to create a personalized shopping-list.
 
 [Live Link](http://159.65.155.169)
 
