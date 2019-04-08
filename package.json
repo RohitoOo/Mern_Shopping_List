@@ -4,9 +4,9 @@
   "description": "Full Stack Mern Shopping Application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "concurrently 'node server.js' 'npm run client'",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
+    "client": "npm i && npm start --prefix client",
     "dev": "concurrently 'npm run start' 'npm run client' "
   },
   "author": "Rohito Bhambhani",
