@@ -1,4 +1,4 @@
-import React, {Component} from 'react' ;
+import React, { Component } from "react"
 // https://reactstrap.github.io/
 import {
   Collapse,
@@ -9,13 +9,12 @@ import {
   NavItem,
   NavLink,
   Container
-}from 'reactstrap';
+} from "reactstrap"
 
 class AppNavbar extends Component {
-
-    state = {
-      isOpen : false
-    }
+  state = {
+    isOpen: false
+  }
 
   toggle = () => {
     this.setState({
@@ -23,30 +22,25 @@ class AppNavbar extends Component {
     })
   }
 
-    render(){
-    return  <div>
+  render() {
+    return (
+      <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
-            <Container>
-              <NavbarBrand href='/'>
-                Shopping List
-              </NavbarBrand>
-              <NavbarToggler onClick={this.toggle}></NavbarToggler>
-              <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                  <NavItem>
-                    <NavLink href="https://rohito.com">Responsive Rohito</NavLink>
-                  </NavItem>
-                </Nav>
-              </Collapse>
-            </Container>
+          <Container>
+            <NavbarBrand href="/">Shopping List</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href="https://rohito.com">Responsive Rohito</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Container>
         </Navbar>
-
       </div>
-    }
-
+    )
+  }
 }
 
-
-
-
-export default AppNavbar;
+export default AppNavbar
