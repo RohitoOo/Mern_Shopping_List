@@ -2,7 +2,7 @@
 
 This is a full-stack MERN app designed to create a personalized shopping-list.
 
-[Live Link](http://159.65.155.169)
+[Live Link](https://fullstack-mern.herokuapp.com/)
 
 **Functionalities:** Adding & deleting shopping items.
 
