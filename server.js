@@ -7,7 +7,7 @@ const app = express()
 
 app.use(cors())
 // Body Parse Middleware
-app.use(bodyParser.json())
+app.use(express.json());
 
 app.use("/api/items", items)
 
